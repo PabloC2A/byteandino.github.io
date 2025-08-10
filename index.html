@@ -3,288 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteAndino - Consultoría en ChronoDBF y Financial Link</title>
-    <meta name="description" content="Consultoría experta para implementar ChronoDBF (versionado de datos legacy) y Financial Link (exposición segura de banca web). Contacta por WhatsApp.">
+    <title>ByteAndino - Planes SaaS ChronoDBF y Consultoría Financial Link</title>
+    <meta name="description" content="Planes SaaS para ChronoDBF: protege y versiona tus datos .DBF. Consultoría experta en Financial Link para una exposición segura de tu banca web.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <style>
         :root {
-            --primary-color: #0d47a1; /* Azul oscuro corporativo */
-            --secondary-color: #1976d2; /* Azul medio */
-            --cta-green: #25D366; /* Verde oficial de WhatsApp */
-            --cta-green-hover: #128C7E; /* Verde oscuro de WhatsApp */
-            --text-color: #333;
-            --light-gray: #f4f4f7;
-            --white: #ffffff;
-            --border-color: #e0e0e0;
+            --bs-primary-rgb: 13, 71, 161; /* Azul oscuro corporativo */
+            --bs-secondary-rgb: 25, 118, 210; /* Azul medio */
+            --bs-success-rgb: 37, 211, 102; /* Verde WhatsApp */
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--white);
-            scroll-behavior: smooth;
+        .btn-primary {
+            --bs-btn-bg: #0d47a1;
+            --bs-btn-border-color: #0d47a1;
+            --bs-btn-hover-bg: #0b3a82;
+            --bs-btn-hover-border-color: #0b3a82;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
+        .btn-success {
+            --bs-btn-hover-bg: #128C7E;
+            --bs-btn-hover-border-color: #128C7E;
         }
 
         .nav-logo {
-            font-size: 1.6em;
             font-weight: bold;
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
 
-        .nav-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: #128C7E;
-        }
-        
         .hero {
-            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(13, 71, 161, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 120px 20px;
+            background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85));
+            color: #fff;
         }
 
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            opacity: 0.95;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 28px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1em;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .plan-popular {
+            border: 2px solid var(--bs-primary);
+            transform: scale(1.03);
+            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
         }
         
-        .button-primary {
-            background-color: var(--cta-green);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .button-primary:hover {
-            background-color: var(--cta-green-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        section {
-            text-align: center;
-        }
-
-        section.services-section, section.consulting-section {
-            background-color: var(--light-gray);
-        }
-        
-        h2 {
-            font-size: 2.3em;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-        }
-
-        .solutions-grid, .consulting-grid {
-            display: grid;
-            gap: 40px;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
-        .solution-card, .consulting-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: left;
-        }
-
-        .solution-card h3, .consulting-card h3 {
-            font-size: 2em;
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-
-        .tagline {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        
-        .consulting-card ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .consulting-card li {
-            padding: 8px 0;
-            color: #555;
-        }
-
-        .consulting-card li::before {
-            content: '✓';
-            color: var(--cta-green);
-            margin-right: 12px;
-            font-weight: bold;
-        }
-        
-        .whatsapp-button {
-            background-color: var(--cta-green);
-            color: white;
-            padding: 20px 40px;
-            font-size: 1.5em;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        }
-        .whatsapp-button:hover {
-            background-color: var(--cta-green-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-        }
-        .whatsapp-button svg {
-            width: 30px;
-            height: 30px;
-        }
-
-        footer {
-            background-color: var(--text-color);
-            color: var(--white);
-            text-align: center;
-            padding: 30px;
+        .section-bg {
+            background-color: #f8f9fa;
         }
 
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="nav-logo">ByteAndino</div>
-            <div class="nav-links">
-                <a href="#solutions">Soluciones</a>
-                <a href="#consulting">Servicios</a>
-                <a href="#contact">Contacto</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fs-4 nav-logo" href="#">ByteAndino</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solutions">Soluciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plans">Planes ChronoDBF</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main>
-
-        <section class="hero">
-            <h1>Consultoría Experta en Sistemas Legacy y Financieros</h1>
-            <p>
-                Transformamos tus sistemas con soluciones robustas de versionado y exposición segura de datos. Hablemos de cómo podemos asegurar la estabilidad de tu empresa.
+    <section class="hero text-center py-5">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold">Protege y Moderniza tus Sistemas Críticos</h1>
+            <p class="lead col-lg-8 mx-auto mb-4">
+                Ofrecemos planes SaaS para el versionado de datos legacy con <strong>ChronoDBF</strong> y consultoría experta para la exposición segura de plataformas financieras con <strong>Financial Link</strong>.
             </p>
-            <a href="#contact" class="button button-primary">Contactar por WhatsApp</a>
-        </section>
+            <a href="#contact" class="btn btn-success btn-lg px-4 me-sm-3">Contactar por WhatsApp</a>
+            <a href="#plans" class="btn btn-outline-light btn-lg px-4">Ver Planes</a>
+        </div>
+    </section>
 
-        <section id="solutions" class="container">
-            <h2>Nuestras Soluciones Tecnológicas</h2>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>ChronoDBF</h3>
-                    <p class="tagline">La máquina del tiempo para tus datos .DBF.</p>
-                    <p>
-                        Implementa un sistema de versionado, auditoría y recuperación para tus datos críticos. Nuestra consultoría te guía en la instalación y configuración de <strong>ChronoDBF</strong> para blindar tus sistemas legacy contra errores y pérdida de información.
-                    </p>
-                </div>
-                <div class="solution-card">
-                    <h3>Financial Link</h3>
-                    <p class="tagline">El puente seguro entre tus datos financieros y la web.</p>
-                    <p>
-                        Diseñamos y construimos la infraestructura y APIs para conectar tu core financiero a la web de forma segura. Nuestra consultoría en <strong>Financial Link</strong> te permite crear una banca web moderna, garantizando seguridad y escalabilidad.
-                    </p>
+    <section id="solutions" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Nuestras Soluciones Tecnológicas</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title fw-bold text-primary">ChronoDBF</h3>
+                        <p class="fst-italic">La máquina del tiempo para tus datos .DBF.</p>
+                        <p>Nuestra solución SaaS que se integra con tus sistemas para crear un historial de versionado cronológico. Protege, encripta, audita y recupera cualquier versión de tus archivos .DBF con total seguridad.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section id="consulting" class="container consulting-section">
-            <h2>Nuestros Servicios de Consultoría</h2>
-            <div class="consulting-grid">
-                <div class="consulting-card">
-                    <h3>Consultoría ChronoDBF</h3>
-                    <p>Te ayudamos a implementar una solución completa de control para tus archivos .DBF. El servicio incluye:</p>
-                    <ul>
-                        <li>Análisis de la estructura de datos actual.</li>
-                        <li>Implementación del sistema de versionado automático.</li>
-                        <li>Configuración de backups locales y seguros.</li>
-                        <li>Establecimiento de un sistema de auditoría.</li>
-                        <li>Capacitación al personal para la recuperación de datos.</li>
-                    </ul>
-                </div>
-                <div class="consulting-card">
-                    <h3>Consultoría Financial Link</h3>
-                    <p>Un servicio integral para llevar tu plataforma financiera a la web de forma segura. Incluye:</p>
-                    <ul>
-                        <li>Análisis de arquitectura de seguridad.</li>
-                        <li>Diseño y desarrollo de APIs a medida.</li>
-                        <li>Implementación de la infraestructura de despliegue.</li>
-                        <li>Pruebas de seguridad y rendimiento.</li>
-                        <li>Plan de mantenimiento y monitoreo.</li>
-                    </ul>
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title fw-bold text-primary">Financial Link</h3>
+                        <p class="fst-italic">El puente seguro entre tus datos financieros y la web.</p>
+                        <p>Nuestro servicio de consultoría que diseña y construye la infraestructura y APIs para conectar tu core financiero a la web, garantizando máxima seguridad, rendimiento y escalabilidad.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
+    <section id="plans" class="py-5 section-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Planes SaaS para ChronoDBF</h2>
+                <p class="lead">Elige el plan que se ajuste a tus necesidades de seguridad y control.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 text-center">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Esencial</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mes</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Encriptación de Datos</li>
+                                <li>Versionado y Recuperación</li>
+                                <li>Historial de 30 días</li>
+                                <li>Backups Manuales</li>
+                                <li>1 Equipo</li>
+                                <li>Soporte WhatsApp (48h)</li>
+                            </ul>
+                            <a href="#contact" class="w-100 btn btn-lg btn-outline-primary">Contratar</a>
+                        </div>
+                    </div>
+                </div>
 
-        <section id="contact" class="container">
-            <h2>¿Listo para dar el siguiente paso?</h2>
-            <p style="max-width: 600px; margin: -20px auto 40px auto;">Envíame un mensaje directo por WhatsApp para una evaluación inicial de tu proyecto, sin ningún compromiso.</p>
-            
-            <a href="https://wa.me/593980520307" class="whatsapp-button" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                <span>Iniciar Chat en WhatsApp</span>
-            </a>
-        </section>
-        
-    </main>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 text-center plan-popular">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Avanzado</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$49<small class="text-body-secondary fw-light">/mes</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><strong>Todo lo de Esencial, y además:</strong></li>
+                                <li>Historial de 3 meses</li>
+                                <li>Backups Automáticos</li>
+                                <li>Auditoría de Archivos</li>
+                                <li>Capacitación y Onboarding</li>
+                                <li>Hasta 5 Equipos</li>
+                                <li>Soporte WhatsApp (24h)</li>
+                            </ul>
+                            <a href="#contact" class="w-100 btn btn-lg btn-primary">Contratar</a>
+                        </div>
+                    </div>
+                </div>
 
-    <footer>
-        <p>&copy; 2025 ByteAndino. Todos los derechos reservados. Desde Loja, Ecuador.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 text-center">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Corporativo</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">A Medida</h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><strong>Todo lo de Avanzado, y además:</strong></li>
+                                <li>Historial Ilimitado</li>
+                                <li>Gestión Centralizada</li>
+                                <li>Reportes de Auditoría</li>
+                                <li>Equipos Ilimitados</li>
+                                <li>Soporte WhatsApp (Inmediato)</li>
+                            </ul>
+                            <a href="#contact" class="w-100 btn btn-lg btn-outline-primary">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-5">
+                <h3 class="text-center mb-4">Tabla Comparativa de Funcionalidades</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th style="width: 34%;">Funcionalidad</th>
+                                <th style="width: 22%;">Esencial</th>
+                                <th style="width: 22%;">Avanzado</th>
+                                <th style="width: 22%;">Corporativo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Encriptación de Datos</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                            <tr><td>Versionado Cronológico</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                            <tr><td>Recuperación de Versiones</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                            <tr><td>Historial de Versiones</td><td>30 días</td><td>3 meses</td><td>Ilimitado</td></tr>
+                            <tr><td>Backups Automáticos</td><td>- (Manual)</td><td>✓</td><td>✓</td></tr>
+                            <tr><td>Auditoría de Archivos</td><td>-</td><td>✓</td><td>✓</td></tr>
+                            <tr><td>Capacitación y Onboarding</td><td>-</td><td>✓</td><td>✓</td></tr>
+                            <tr><td>Nº de Equipos</td><td>1</td><td>Hasta 5</td><td>A medida</td></tr>
+                            <tr><td>Soporte por WhatsApp</td><td>Respuesta 48h</td><td>Respuesta 24h</td><td>Inmediato</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container text-center py-5">
+        <h2 class="fw-bold">Hablemos de tu Proyecto</h2>
+        <p class="lead col-lg-7 mx-auto mb-4">
+            ¿Listo para implementar ChronoDBF o necesitas una consultoría para Financial Link? Envíame un mensaje directo para una evaluación sin compromiso.
+        </p>
+        <a href="https://wa.me/593991234567" class="btn btn-success btn-lg rounded-pill px-5 py-3" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp me-2" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.978 0C3.58 0 0 3.58 0 7.978c0 1.453.386 2.826 1.084 4.01L0 16l4.204-1.102a7.9 7.9 0 0 0 3.774 1.003h.002c4.398 0 7.978-3.58 7.978-7.978 0-2.222-.91-4.243-2.38-5.752zM7.978 14.455a6.59 6.59 0 0 1-3.356-.92l-.23-.135-2.494.654.666-2.433-.149-.248a6.55 6.55 0 0 1-1.003-3.505c0-3.626 2.942-6.568 6.568-6.568a6.58 6.58 0 0 1 4.66 1.931 6.58 6.58 0 0 1 1.931 4.66c-.004 3.626-2.942 6.568-6.568 6.568zm3.626-4.935c-.198-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.23.149-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.133.034-.248-.016-.347-.05-.1-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.05-.087-.182-.133-.38-.232z"/>
+            </svg>
+            Iniciar Chat
+        </a>
+    </section>
+    
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 ByteAndino. Todos los derechos reservados. Desde Loja, Ecuador.</p>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
