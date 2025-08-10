@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteAndino - Soluciones ChronoDBF y Financial Link</title>
-    <meta name="description" content="Potencia y protege tus sistemas con ChronoDBF para versionado de datos legacy y Financial Link para una exposición segura de tu banca web.">
+    <title>ByteAndino - Consultoría en ChronoDBF y Financial Link</title>
+    <meta name="description" content="Consultoría experta para implementar ChronoDBF (versionado de datos legacy) y Financial Link (exposición segura de banca web). Contacta por WhatsApp.">
     <style>
         :root {
             --primary-color: #0d47a1; /* Azul oscuro corporativo */
             --secondary-color: #1976d2; /* Azul medio */
-            --cta-green: #2e7d32; /* Verde vibrante para CTA */
-            --cta-green-hover: #1b5e20; /* Verde más oscuro para hover */
+            --cta-green: #25D366; /* Verde oficial de WhatsApp */
+            --cta-green-hover: #128C7E; /* Verde oscuro de WhatsApp */
             --text-color: #333;
             --light-gray: #f4f4f7;
             --white: #ffffff;
@@ -24,13 +24,14 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
         .container {
             width: 90%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
         header {
@@ -62,26 +63,26 @@
             transition: color 0.3s ease;
         }
         .nav-links a:hover {
-            color: var(--cta-green);
+            color: #128C7E;
         }
         
         .hero {
-            background-color: var(--primary-color);
+            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(13, 71, 161, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
         .hero h1 {
-            font-size: 2.8em;
+            font-size: 3em;
             margin-bottom: 0.5em;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             max-width: 700px;
             margin: 0 auto 40px auto;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .button {
@@ -95,53 +96,24 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
+        
         .button-primary {
-            background: linear-gradient(to right, var(--secondary-color), var(--cta-green));
+            background-color: var(--cta-green);
             color: var(--white);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .button-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .button-secondary {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: var(--white);
-            border: 2px solid var(--white);
-            margin-left: 15px;
-        }
-        
-        .button-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-        }
-        
-        .button-green {
-            background-color: var(--cta-green);
-            color: var(--white);
-        }
-        .button-green:hover {
             background-color: var(--cta-green-hover);
             transform: translateY(-2px);
-        }
-        
-        .button-blue {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-        .button-blue:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         section {
             text-align: center;
         }
 
-        section.services-section {
+        section.services-section, section.consulting-section {
             background-color: var(--light-gray);
         }
         
@@ -151,13 +123,13 @@
             color: var(--primary-color);
         }
 
-        .solutions-grid {
+        .solutions-grid, .consulting-grid {
             display: grid;
             gap: 40px;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
 
-        .solution-card {
+        .solution-card, .consulting-card {
             background: var(--white);
             padding: 40px;
             border-radius: 10px;
@@ -165,81 +137,57 @@
             text-align: left;
         }
 
-        .solution-card h3 {
+        .solution-card h3, .consulting-card h3 {
             font-size: 2em;
             color: var(--primary-color);
             margin-top: 0;
         }
 
-        .solution-card .tagline {
+        .tagline {
             font-style: italic;
             color: #555;
             margin-bottom: 20px;
         }
         
-        .plans-grid {
-            display: grid;
-            gap: 30px;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            align-items: center;
-        }
-        
-        .plan-card {
-            display: flex;
-            flex-direction: column;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: left;
-            transition: all 0.3s ease;
-        }
-        
-        .plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .plan-card h3 {
-            color: var(--primary-color);
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-        }
-
-        .plan-card ul {
+        .consulting-card ul {
             list-style: none;
             padding: 0;
-            margin: 20px 0;
+            margin-top: 20px;
         }
 
-        .plan-card li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--light-gray);
+        .consulting-card li {
+            padding: 8px 0;
             color: #555;
         }
 
-        .plan-card li::before {
+        .consulting-card li::before {
             content: '✓';
             color: var(--cta-green);
             margin-right: 12px;
             font-weight: bold;
         }
         
-        .plan-card .button {
-            width: auto;
-            text-align: center;
-            margin-top: 20px;
-            padding: 15px;
+        .whatsapp-button {
+            background-color: var(--cta-green);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
-        
-        .popular {
-            border: 2px solid var(--cta-green);
-            transform: scale(1.05);
+        .whatsapp-button:hover {
+            background-color: var(--cta-green-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
         }
-        .popular h3 {
-            color: var(--cta-green);
+        .whatsapp-button svg {
+            width: 30px;
+            height: 30px;
         }
 
         footer {
@@ -258,7 +206,7 @@
             <div class="nav-logo">ByteAndino</div>
             <div class="nav-links">
                 <a href="#solutions">Soluciones</a>
-                <a href="#plans">Planes</a>
+                <a href="#consulting">Servicios</a>
                 <a href="#contact">Contacto</a>
             </div>
         </nav>
@@ -267,105 +215,71 @@
     <main>
 
         <section class="hero">
-            <h1>Potencia y Protege tus Sistemas Críticos</h1>
+            <h1>Consultoría Experta en Sistemas Legacy y Financieros</h1>
             <p>
-                Ofrecemos soluciones robustas para el versionado de datos legacy y la exposición segura de plataformas financieras. Dale a tu empresa la estabilidad que necesita para crecer.
+                Transformamos tus sistemas con soluciones robustas de versionado y exposición segura de datos. Hablemos de cómo podemos asegurar la estabilidad de tu empresa.
             </p>
-            <a href="#solutions" class="button button-primary">Conoce Nuestras Soluciones</a>
-            <a href="#contact" class="button button-secondary">Contactar Ahora</a>
+            <a href="#contact" class="button button-primary">Contactar por WhatsApp</a>
         </section>
 
-        <section id="solutions" class="container services-section">
+        <section id="solutions" class="container">
             <h2>Nuestras Soluciones Tecnológicas</h2>
             <div class="solutions-grid">
-
                 <div class="solution-card">
                     <h3>ChronoDBF</h3>
                     <p class="tagline">La máquina del tiempo para tus datos .DBF.</p>
                     <p>
-                        No dejes que un error o una corrupción de datos paralice tu negocio. <strong>ChronoDBF</strong> es nuestra solución de software que se integra con tus sistemas legacy para crear un historial de versionado cronológico automático. Protege, audita y recupera cualquier versión de tus archivos .DBF con total seguridad y sin necesidad de mover tus datos a la nube.
+                        Implementa un sistema de versionado, auditoría y recuperación para tus datos críticos. Nuestra consultoría te guía en la instalación y configuración de <strong>ChronoDBF</strong> para blindar tus sistemas legacy contra errores y pérdida de información.
                     </p>
-                    <ul>
-                        <li>✓ <strong>Versionado automático:</strong> Guarda cada cambio con fecha, hora y usuario.</li>
-                        <li>✓ <strong>Recuperación instantánea:</strong> Restaura archivos a un punto anterior en segundos.</li>
-                        <li>✓ <strong>Auditoría completa:</strong> Registra quién, cuándo y qué se modificó.</li>
-                        <li>✓ <strong>Backups locales seguros:</strong> Copias de seguridad en tu propia infraestructura.</li>
-                    </ul>
                 </div>
-
                 <div class="solution-card">
                     <h3>Financial Link</h3>
                     <p class="tagline">El puente seguro entre tus datos financieros y la web.</p>
                     <p>
-                        Expón los datos de tu plataforma financiera o cooperativa para construir una banca web moderna y segura. <strong>Financial Link</strong> es nuestro servicio de consultoría e implementación que diseña y construye la infraestructura y las APIs necesarias para conectar tu core financiero a la web, garantizando la máxima seguridad, rendimiento y escalabilidad.
+                        Diseñamos y construimos la infraestructura y APIs para conectar tu core financiero a la web de forma segura. Nuestra consultoría en <strong>Financial Link</strong> te permite crear una banca web moderna, garantizando seguridad y escalabilidad.
                     </p>
-                     <ul>
-                        <li>✓ <strong>Arquitectura Segura:</strong> Despliegue de servicios siguiendo los más altos estándares.</li>
-                        <li>✓ <strong>Desarrollo de APIs:</strong> Creamos los conectores para una comunicación controlada.</li>
-                        <li>✓ <strong>Monitoreo y Mantenimiento:</strong> Vigilancia proactiva para asegurar la disponibilidad.</li>
-                    </ul>
                 </div>
-
             </div>
         </section>
 
-        <section id="plans" class="container">
-            <h2>Planes de Soporte y Servicio</h2>
-            <p style="max-width: 700px; margin: -30px auto 50px auto;">Ofrecemos suscripciones flexibles para nuestra solución <strong>ChronoDBF</strong> y paquetes de consultoría para <strong>Financial Link</strong>.</p>
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <h3>Básico ChronoDBF</h3>
-                    <p>Ideal para profesionales y pequeñas empresas.</p>
+        <section id="consulting" class="container consulting-section">
+            <h2>Nuestros Servicios de Consultoría</h2>
+            <div class="consulting-grid">
+                <div class="consulting-card">
+                    <h3>Consultoría ChronoDBF</h3>
+                    <p>Te ayudamos a implementar una solución completa de control para tus archivos .DBF. El servicio incluye:</p>
                     <ul>
-                        <li>Backup Local Automático</li>
-                        <li>Soporte Técnico Remoto</li>
-                        <li>Monitoreo Básico</li>
+                        <li>Análisis de la estructura de datos actual.</li>
+                        <li>Implementación del sistema de versionado automático.</li>
+                        <li>Configuración de backups locales y seguros.</li>
+                        <li>Establecimiento de un sistema de auditoría.</li>
+                        <li>Capacitación al personal para la recuperación de datos.</li>
                     </ul>
-                    <a href="#contact" class="button button-blue">Contratar Básico</a>
                 </div>
-                <div class="plan-card popular">
-                    <h3>Profesional ChronoDBF</h3>
-                    <p>El más popular. Control y seguridad total.</p>
-                    <ul>
-                        <li><strong>Todo lo del Plan Básico, y además:</strong></li>
-                        <li>Versionado Cronológico</li>
-                        <li>Recuperación de Versiones</li>
-                        <li>Auditoría de Cambios</li>
-                        <li>Soporte Técnico Prioritario</li>
-                    </ul>
-                    <a href="#contact" class="button button-green">Contratar Profesional</a>
-                </div>
-                <div class="plan-card">
+                <div class="consulting-card">
                     <h3>Consultoría Financial Link</h3>
-                    <p>Un paquete a medida para tu proyecto de banca web.</p>
+                    <p>Un servicio integral para llevar tu plataforma financiera a la web de forma segura. Incluye:</p>
                     <ul>
-                        <li>Análisis de Arquitectura</li>
-                        <li>Diseño y Desarrollo de APIs</li>
-                        <li>Implementación y Despliegue</li>
-                        <li>Plan de Mantenimiento</li>
+                        <li>Análisis de arquitectura de seguridad.</li>
+                        <li>Diseño y desarrollo de APIs a medida.</li>
+                        <li>Implementación de la infraestructura de despliegue.</li>
+                        <li>Pruebas de seguridad y rendimiento.</li>
+                        <li>Plan de mantenimiento y monitoreo.</li>
                     </ul>
-                    <a href="#contact" class="button button-blue">Solicitar Cotización</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="container" style="background-color: var(--white);">
-            <h2>Hablemos de tu Proyecto</h2>
-            <p>Completa el formulario y te contactaré para una evaluación gratuita y sin compromiso.</p>
-            <form action="https://formspree.io/f/TU_ENDPOINT_AQUI" method="POST" class="contact-form" style="max-width: 600px; margin: 0 auto; text-align: left;">
-                <input type="text" name="name" placeholder="Nombre Completo" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
-                <input type="email" name="email" placeholder="Email de Contacto" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
-                <input type="text" name="company" placeholder="Nombre de la Empresa (Opcional)" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
-                <select name="service_interest" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
-                    <option value="" disabled selected>¿En qué solución estás interesado?</option>
-                    <option value="ChronoDBF">ChronoDBF (Soporte y Versionado)</option>
-                    <option value="Financial Link">Financial Link (Banca Web)</option>
-                    <option value="Ambos">Ambas Soluciones</option>
-                </select>
-                <textarea name="message" rows="5" placeholder="Cuéntame un poco sobre tu necesidad..." required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
-                <button type="submit" class="button button-primary" style="width: 100%;">Enviar y Solicitar Evaluación</button>
-            </form>
+        <section id="contact" class="container">
+            <h2>¿Listo para dar el siguiente paso?</h2>
+            <p style="max-width: 600px; margin: -20px auto 40px auto;">Envíame un mensaje directo por WhatsApp para una evaluación inicial de tu proyecto, sin ningún compromiso.</p>
+            
+            <a href="https://wa.me/593980520307" class="whatsapp-button" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.2-27.2l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                <span>Iniciar Chat en WhatsApp</span>
+            </a>
         </section>
+        
     </main>
 
     <footer>
