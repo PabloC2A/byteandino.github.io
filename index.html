@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteAndino - Soluciones ChronoDBF y Financial Link</title>
+    <meta name="description" content="Potencia y protege tus sistemas con ChronoDBF para versionado de datos legacy y Financial Link para una exposición segura de tu banca web.">
+    <style>
+        :root {
+            --primary-color: #0d47a1; /* Azul oscuro corporativo */
+            --secondary-color: #1976d2; /* Azul medio */
+            --cta-green: #2e7d32; /* Verde vibrante para CTA */
+            --cta-green-hover: #1b5e20; /* Verde más oscuro para hover */
+            --text-color: #333;
+            --light-gray: #f4f4f7;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .nav-logo {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--cta-green);
+        }
+        
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            opacity: 0.9;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button-primary {
+            background: linear-gradient(to right, var(--secondary-color), var(--cta-green));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .button-secondary {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+        
+        .button-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+        
+        .button-green {
+            background-color: var(--cta-green);
+            color: var(--white);
+        }
+        .button-green:hover {
+            background-color: var(--cta-green-hover);
+            transform: translateY(-2px);
+        }
+        
+        .button-blue {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        .button-blue:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        section {
+            text-align: center;
+        }
+
+        section.services-section {
+            background-color: var(--light-gray);
+        }
+        
+        h2 {
+            font-size: 2.3em;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .solutions-grid {
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
+        }
+
+        .solution-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .solution-card h3 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .solution-card .tagline {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .plans-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+        }
+        
+        .plan-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .plan-card h3 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .plan-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            color: #555;
+        }
+
+        .plan-card li::before {
+            content: '✓';
+            color: var(--cta-green);
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        
+        .plan-card .button {
+            width: auto;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+        }
+        
+        .popular {
+            border: 2px solid var(--cta-green);
+            transform: scale(1.05);
+        }
+        .popular h3 {
+            color: var(--cta-green);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-logo">ByteAndino</div>
+            <div class="nav-links">
+                <a href="#solutions">Soluciones</a>
+                <a href="#plans">Planes</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>Potencia y Protege tus Sistemas Críticos</h1>
+            <p>
+                Ofrecemos soluciones robustas para el versionado de datos legacy y la exposición segura de plataformas financieras. Dale a tu empresa la estabilidad que necesita para crecer.
+            </p>
+            <a href="#solutions" class="button button-primary">Conoce Nuestras Soluciones</a>
+            <a href="#contact" class="button button-secondary">Contactar Ahora</a>
+        </section>
+
+        <section id="solutions" class="container services-section">
+            <h2>Nuestras Soluciones Tecnológicas</h2>
+            <div class="solutions-grid">
+
+                <div class="solution-card">
+                    <h3>ChronoDBF</h3>
+                    <p class="tagline">La máquina del tiempo para tus datos .DBF.</p>
+                    <p>
+                        No dejes que un error o una corrupción de datos paralice tu negocio. <strong>ChronoDBF</strong> es nuestra solución de software que se integra con tus sistemas legacy para crear un historial de versionado cronológico automático. Protege, audita y recupera cualquier versión de tus archivos .DBF con total seguridad y sin necesidad de mover tus datos a la nube.
+                    </p>
+                    <ul>
+                        <li>✓ <strong>Versionado automático:</strong> Guarda cada cambio con fecha, hora y usuario.</li>
+                        <li>✓ <strong>Recuperación instantánea:</strong> Restaura archivos a un punto anterior en segundos.</li>
+                        <li>✓ <strong>Auditoría completa:</strong> Registra quién, cuándo y qué se modificó.</li>
+                        <li>✓ <strong>Backups locales seguros:</strong> Copias de seguridad en tu propia infraestructura.</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card">
+                    <h3>Financial Link</h3>
+                    <p class="tagline">El puente seguro entre tus datos financieros y la web.</p>
+                    <p>
+                        Expón los datos de tu plataforma financiera o cooperativa para construir una banca web moderna y segura. <strong>Financial Link</strong> es nuestro servicio de consultoría e implementación que diseña y construye la infraestructura y las APIs necesarias para conectar tu core financiero a la web, garantizando la máxima seguridad, rendimiento y escalabilidad.
+                    </p>
+                     <ul>
+                        <li>✓ <strong>Arquitectura Segura:</strong> Despliegue de servicios siguiendo los más altos estándares.</li>
+                        <li>✓ <strong>Desarrollo de APIs:</strong> Creamos los conectores para una comunicación controlada.</li>
+                        <li>✓ <strong>Monitoreo y Mantenimiento:</strong> Vigilancia proactiva para asegurar la disponibilidad.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="plans" class="container">
+            <h2>Planes de Soporte y Servicio</h2>
+            <p style="max-width: 700px; margin: -30px auto 50px auto;">Ofrecemos suscripciones flexibles para nuestra solución <strong>ChronoDBF</strong> y paquetes de consultoría para <strong>Financial Link</strong>.</p>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Básico ChronoDBF</h3>
+                    <p>Ideal para profesionales y pequeñas empresas.</p>
+                    <ul>
+                        <li>Backup Local Automático</li>
+                        <li>Soporte Técnico Remoto</li>
+                        <li>Monitoreo Básico</li>
+                    </ul>
+                    <a href="#contact" class="button button-blue">Contratar Básico</a>
+                </div>
+                <div class="plan-card popular">
+                    <h3>Profesional ChronoDBF</h3>
+                    <p>El más popular. Control y seguridad total.</p>
+                    <ul>
+                        <li><strong>Todo lo del Plan Básico, y además:</strong></li>
+                        <li>Versionado Cronológico</li>
+                        <li>Recuperación de Versiones</li>
+                        <li>Auditoría de Cambios</li>
+                        <li>Soporte Técnico Prioritario</li>
+                    </ul>
+                    <a href="#contact" class="button button-green">Contratar Profesional</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Consultoría Financial Link</h3>
+                    <p>Un paquete a medida para tu proyecto de banca web.</p>
+                    <ul>
+                        <li>Análisis de Arquitectura</li>
+                        <li>Diseño y Desarrollo de APIs</li>
+                        <li>Implementación y Despliegue</li>
+                        <li>Plan de Mantenimiento</li>
+                    </ul>
+                    <a href="#contact" class="button button-blue">Solicitar Cotización</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container" style="background-color: var(--white);">
+            <h2>Hablemos de tu Proyecto</h2>
+            <p>Completa el formulario y te contactaré para una evaluación gratuita y sin compromiso.</p>
+            <form action="https://formspree.io/f/TU_ENDPOINT_AQUI" method="POST" class="contact-form" style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <input type="text" name="name" placeholder="Nombre Completo" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
+                <input type="email" name="email" placeholder="Email de Contacto" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
+                <input type="text" name="company" placeholder="Nombre de la Empresa (Opcional)" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
+                <select name="service_interest" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
+                    <option value="" disabled selected>¿En qué solución estás interesado?</option>
+                    <option value="ChronoDBF">ChronoDBF (Soporte y Versionado)</option>
+                    <option value="Financial Link">Financial Link (Banca Web)</option>
+                    <option value="Ambos">Ambas Soluciones</option>
+                </select>
+                <textarea name="message" rows="5" placeholder="Cuéntame un poco sobre tu necesidad..." required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+                <button type="submit" class="button button-primary" style="width: 100%;">Enviar y Solicitar Evaluación</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ByteAndino. Todos los derechos reservados. Desde Loja, Ecuador.</p>
+    </footer>
+
+</body>
+</html>
